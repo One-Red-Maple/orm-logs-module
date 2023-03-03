@@ -1,0 +1,26 @@
+{
+  "name": "orm-logs-module",
+  "version": "1.0.0",
+  "description": "One Red Maple module for logging info, warnings, errors etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/One-Red-Maple/orm-logs-module.git"
+  },
+  "keywords": [
+    "ORM",
+    "logging"
+  ],
+  "author": "Eric Dion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/One-Red-Maple/orm-logs-module/issues"
+  },
+  "homepage": "https://github.com/One-Red-Maple/orm-logs-module#readme",
+  "dependencies": {
+    "logzio-nodejs": "^2.1.5"
+  }
+}
