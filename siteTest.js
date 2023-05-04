@@ -66,12 +66,27 @@ let allSites = [
 'https://www.levi.com/CA/en_CA/clothing/men/jeans/straight/501-93-straight-fit-mens-jeans/p/798300241',
 'https://oldnavy.gapcanada.ca/browse/product.do?pid=544320043&rrec=true&mlink=5001,1,home_onhome1_rr_0&clink=1#pdp-page-content',
 'https://boathousestores.com/collections/mens-sneakers/products/mens-vans-sk8-hi-reconstruct-3',
-'https://www.geox.com/en-CA/lightweight_jacket-light_grey-black-vincit_man-M3522FT2993F1513.html'
+'https://www.geox.com/en-CA/lightweight_jacket-light_grey-black-vincit_man-M3522FT2993F1513.html',
+'https://www.sephora.com/ca/en/product/sol-de-janeiro-beija-flor-body-hair-mist-P483156?icid2=homepage_productlist_chosenforyou_ca_rwd_092022',
+'https://www.abercrombie.com/shop/ca/p/pattern-3-button-sweater-polo-51793819?categoryId=12202&faceout=model&seq=01',
+'https://www.reitmans.com/en/short-sleeve-midi-dress-with-wrap-detail/467359.html?dwvar_467359_color=Rosin&cgid=New%20Arrivals#start=1',
+'https://www.peoplesjewellers.com/625mm-white-labcreated-sapphire-drop-earrings-sterling-silver/p/V-20563908',
+'https://www.davidstea.com/ca_en/tea/tea-by-flavour/mint/organic-mint-everest-tea/11018DT01VAR0101222.html?cgid=mint-flavors#start=1',
+'https://shop.shoppersdrugmart.ca/airpods-pro-2nd-generation/p/BB_194253397168?variantCode=194253397168',
+'https://www.stokesstores.com/en/remy-olivier-reims-round-frying-pan.html',
+'https://www.sunglasshut.com/ca-en/versace/ve4361-8056597094504',
+'https://www.garageclothing.com/ca/p/wide-leg-jean/10008361907I.html',
+'https://www.freepeople.com/shop/essential-slim-midi/?source=PRODUCTIDPRODUCTTRAY&color=030&type=REGULAR&quantity=1',
+'https://www.aldoshoes.com/ca/en/women/rheanastraw-pink/p/13428507',
+'https://www.harryrosen.com/en/product/patrick-assaraf-pocket-stretch-cotton-t-shirt-20084589070',
+'https://shophoney.com/collections/casual-dresses/products/ld50338'
+
 ];
+
 // 'https://www.footlocker.ca/en/product/adidas-reptossage-mens/46427400.html',
 // 'https://www.canadagoose.com/ca/en/kelowna%C2%A0fleece%C2%A0jacket-humanature-7017M2.html',
 // Canada goose and footlocker have blocker
-//allSites = ['https://www.nike.com/ca/t/air-jordan-1-mid-shoes-f8W9ns/DQ8426-301'];
+//allSites = ['https://www.footlocker.ca/en/product/jordan-retro-13-mens/24181998.html'];
 let failSites = 'Extension did not load on the following sites:\n';
 let passReload = 'Extension loaded after reloading page\n';
 var options = {
@@ -81,7 +96,7 @@ var options = {
 const pathName = path.join(process.cwd(),'dist/orm-extension-app');
 (async () => {
 	await config.init();
-	await logger.init('extensionTest', 'local');
+	await logger.init('extension-test', 'local');
 	const browser = await puppeteer.launch({
 		headless: "new",
 		args: [
