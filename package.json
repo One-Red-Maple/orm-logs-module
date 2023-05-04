@@ -21,6 +21,14 @@
   },
   "homepage": "https://github.com/One-Red-Maple/orm-logs-module#readme",
   "dependencies": {
-    "logzio-nodejs": "^2.1.5"
+    "chai": "^4.3.7",
+    "logzio-nodejs": "^2.1.5",
+    "mocha": "^10.2.0",
+    "orm-keyvault-module": "github:One-Red-Maple/orm-keyvault-module",
+    "puppeteer": "^20.1.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "selenium-webdriver": "^4.9.0"
   }
 }
