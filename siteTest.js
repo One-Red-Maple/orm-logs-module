@@ -71,13 +71,14 @@ let allSites = [
 // 'https://www.footlocker.ca/en/product/adidas-reptossage-mens/46427400.html',
 // 'https://www.canadagoose.com/ca/en/kelowna%C2%A0fleece%C2%A0jacket-humanature-7017M2.html',
 // Canada goose and footlocker have blocker
-allSites = ['https://www.nike.com/ca/t/air-jordan-1-mid-shoes-f8W9ns/DQ8426-301'];
+//allSites = ['https://www.nike.com/ca/t/air-jordan-1-mid-shoes-f8W9ns/DQ8426-301'];
 let failSites = 'Extension did not load on the following sites:\n';
 let passReload = 'Extension loaded after reloading page\n';
 var options = {
 	"level": logger.LEVELS.ERROR,
 	"tags": "extensionTest"
 };
+const pathName = path.join(process.cwd(),'dist/orm-extension-app');
 (async () => {
 	await config.init();
 	await logger.init('extensionTest', 'local');
@@ -85,8 +86,8 @@ var options = {
 		headless: "new",
 		args: [
 			// replace with extension path
-			`--disable-extensions-except=C:/Users/user/Desktop/orm_extension/dist/orm-extension-app`,
-			`--load-extension=C:/Users/user/Desktop/orm_extension/dist/orm-extension-app`,
+			`--disable-extensions-except=${pathName}`,
+			`--load-extension=${pathName}`,
 		  ],});
 	var attempts = 0;
 	var i = 0;
