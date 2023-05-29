@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "One Red Maple module for logging info, warnings, errors etc.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
