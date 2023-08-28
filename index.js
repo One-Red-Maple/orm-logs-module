@@ -44,11 +44,18 @@ module.exports = {
     }
     
      // Log to logz.io
-    this.logger.log({
-      "message": msg,
-      "orm-log-level": options.level,
-      "tags": options.tags
-    });
+    if(this.logger) {
+
+      // Log to logz.io
+      this.logger.log({
+        "message": msg,
+        "orm-log-level": options.level,
+        "tags": options.tags
+      });
+
+    } else {
+      console.log(msg);
+    }
 
   }
 };
