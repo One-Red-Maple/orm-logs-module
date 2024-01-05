@@ -5,7 +5,8 @@ declare module "orm-logs-module" {
       INFO: number,
       WARN: number,
       ERROR: number,
-      CRITICAL: number
+      CRITICAL: number,
+      OUTAGE: number
     };
 
     export function init(processName: any, hostLocation: any): void;
