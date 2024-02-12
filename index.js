@@ -7,11 +7,12 @@ module.exports = {
     "INFO": 1,
     "WARN": 2,
     "ERROR": 3,
-    "CRITICAL": 4
+    "CRITICAL": 4,
+    "OUTAGE": 5
   },
 
   init(processName, hostLocation) {
-    
+
     this.logger = require('logzio-nodejs').createLogger({
       token: process.env.LOGZ_IO_KEY,
       protocol: 'https',
@@ -24,7 +25,7 @@ module.exports = {
       }
     });
   },
-  
+
   getLevelNameByValue : function(value) {
     return  Object.keys(this.LEVELS)[value];
   },
@@ -42,7 +43,7 @@ module.exports = {
       else
         console.log(`${this.getLevelNameByValue(options.level)} : ${msg} : ${options.tags}`); // Log to standard out
     }
-    
+
      // Log to logz.io
     if(this.logger) {
 
