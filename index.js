@@ -46,19 +46,16 @@ module.exports = {
 
      // Log to logz.io
     if(this.logger) {
-
-	  if(options.level < process.env.LOG_LEVEL){
-		break;
-	  } else {
-		  // Log to logz.io
-		  this.logger.log({
-			"message": msg,
-			"orm-log-level": options.level,
-			"tags": options.tags
-		  });
-		} else {
-		  console.log(msg);
-		}
+        if(options.level >= process.env.LOG_LEVEL){
+          // Log to logz.io
+          this.logger.log({
+            "message": msg,
+            "orm-log-level": options.level,
+            "tags": options.tags
+            });
+          }
+    } else {
+        console.log(msg);
     }
   }
 };
