@@ -1,6 +1,6 @@
 {
   "name": "orm-logs-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One Red Maple module for logging info, warnings, errors etc.",
   "main": "index.js",
   "types": "index.d.ts",
