@@ -38,7 +38,7 @@ module.exports = {
 
     if(options.level >= (process.env.LOG_LEVEL || this.LEVELS.INFO)){
 
-      if(options.level == this.LEVELS.WARN || options.level == this.LEVELS.ERROR || options.level == this.LEVELS.CRITICAL)
+      if(options.level == this.LEVELS.WARN || options.level == this.LEVELS.ERROR || options.level == this.LEVELS.CRITICAL || options.level == this.LEVELS.OUTAGE)
         console.error(`${this.getLevelNameByValue(options.level)} : ${msg} : ${options.tags}`); // Log to standard error
       else
         console.log(`${this.getLevelNameByValue(options.level)} : ${msg} : ${options.tags}`); // Log to standard out
@@ -46,17 +46,16 @@ module.exports = {
 
      // Log to logz.io
     if(this.logger) {
-
-      // Log to logz.io
-      this.logger.log({
-        "message": msg,
-        "orm-log-level": options.level,
-        "tags": options.tags
-      });
-
+        if(options.level >= process.env.LOG_LEVEL){
+          // Log to logz.io
+          this.logger.log({
+            "message": msg,
+            "orm-log-level": options.level,
+            "tags": options.tags
+            });
+          }
     } else {
-      console.log(msg);
+        console.log(msg);
     }
-
   }
 };
